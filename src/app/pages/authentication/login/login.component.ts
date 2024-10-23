@@ -34,8 +34,8 @@ export default class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {
     this.loginForm = new FormGroup({
-      user: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+      user: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
     });
   }
   onSubmit() {
