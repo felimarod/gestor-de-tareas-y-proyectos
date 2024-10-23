@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTooltip } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -47,7 +47,6 @@ export default class LoginComponent {
       this.snackBar.open(`Inicio de sesión exitoso`, '', {
         duration: 3000,
       });
-      console.log(JSON.stringify(this.loginForm.value));
       this.router.navigate(['/']);
     }
   }
