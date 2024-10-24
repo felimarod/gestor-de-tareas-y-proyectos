@@ -1,0 +1,24 @@
+@for (project of projects; track $index) {
+<mat-card appearance="outlined" class="card-project">
+  <!-- ID, título y descripción -->
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>
+        {{ project["name"] }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        ({{ project["username"] }})
+      </mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <strong>Compañía: </strong>{{ project["company"]["name"] }}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-fab (click)="seeTasks(project)">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-card-footer>{{ project["id"] }}</mat-card-footer>
+</mat-card>
+}
