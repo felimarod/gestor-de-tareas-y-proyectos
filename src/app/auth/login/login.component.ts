@@ -49,12 +49,16 @@ export default class LoginComponent {
       )
     ) {
       this.snackBar.open(`Inicio de sesión exitoso`, '', {
-        duration: 3000,
+        duration: 4000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
       });
       this.router.navigate(['/']);
     } else {
       this.snackBar.open(`Inicio de sesión fallido`, '', {
-        duration: 3000,
+        duration: 4000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
       });
     }
   }

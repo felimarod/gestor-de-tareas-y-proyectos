@@ -3,18 +3,29 @@ import LoginComponent from './auth/login/login.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { AuthenticatedGuard } from './core/guards/authenticated.guard';
 import { AuthGuard } from './core/guards/auth.guard';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
 
 export const routes: Routes = [
   {
     path: 'login',
-    // loadComponent: () => import('./auth/login/login.component'),
     component: LoginComponent,
     canActivate: [AuthenticatedGuard],
   },
   {
     path: 'projects',
-    // loadComponent: () => import('./projects/project-list/project-list.component'),
     component: ProjectListComponent,
+    canActivate: [AuthGuard],
+    // children: [
+    //   {
+    //     path: ':proyecto_id',
+    //     component: TaskListComponent,
+    //     canActivate: [AuthGuard],
+    //   },
+    // ],
+  },
+  {
+    path: 'projects/:proyecto_id',
+    component: TaskListComponent,
     canActivate: [AuthGuard],
   },
   {

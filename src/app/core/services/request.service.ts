@@ -4,6 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import { catchError, map, mergeMap, retry } from 'rxjs/operators';
 import { HttpErrorManagerService } from './http-error-manager.service';
 import { environment } from '../../../environments/environment.development';
+import { Project } from '../../projects/interfaces/project.interface';
+import { Task } from '../../tasks/interfaces/task';
 
 /**
  * This class manage the http connections with internal REST services. Use the response format {
@@ -24,17 +26,15 @@ export class RequestService {
   /**
    * Perform a GET http request
    *
-   * @returns Observable<any>
+   * @returns Observable<Project[] | Task[]>
    */
   get(path: string, endpoint: string) {
-    return this.http
-      .get<any>(`${path}${endpoint}`)
-      .pipe(
-        map((res: any) => {
-          return res;
-        }),
-        catchError(this.errManager.handleError.bind(this))
-      );
+    return this.http.get<Project[] | Task[]>(`${path}${endpoint}`).pipe(
+      map((res: Project[] | Task[]) => {
+        return res;
+      }),
+      catchError(this.errManager.handleError.bind(this))
+    );
   }
 
   /**
