@@ -13,39 +13,37 @@ node -v
 npm -v
 ng version
 ```
-### Clonar el Repositorio
+## Clonar el Repositorio
 Para clonar este repositorio, utiliza el siguiente comando:
 
 ```bash
 git clone https://github.com/felimarod/gestor-de-tareas-y-proyectos.git
 ```
-
-Instalar Paquetes
+## Instalar Paquetes
 Navega a la carpeta del proyecto:
 
-bash
-Copiar código
+```bash
 cd nombre-del-repositorio
+```
 Luego, instala los paquetes necesarios utilizando npm:
 
-bash
-Copiar código
+```bash
 npm install
-Esto descargará todas las dependencias definidas en el archivo package.json.
+```
 
-Iniciar el Servidor de Desarrollo
+### Iniciar el Servidor de Desarrollo
 Para iniciar el servidor de desarrollo, ejecuta el siguiente comando:
 
-bash
-Copiar código
+```bash
 ng serve
+```
 Navega a http://localhost:4200/ en tu navegador. La aplicación se recargará automáticamente si realizas cambios en los archivos de origen.
 
-Contribuciones
+##Contribuciones
 Si deseas contribuir a este proyecto, por favor abre un "issue" o crea un "pull request".
 
-Licencia
+# Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-Contacto
+# Contacto
 Si tienes preguntas o sugerencias, no dudes en ponerte en contacto conmigo.
