@@ -1,27 +1,51 @@
 # Gestor De Tareas Y Proyectos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 18.2.9 y [NodeJS](https://nodejs.org) versión 18.19.1.
 
-## Development server
+## Prerequisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Asegúrate de tener instalados [NodeJS](https://nodejs.org) y [Angular CLI](https://angular.io/cli) en tu máquina.
 
-## Code scaffolding
+Para verificar si ya los tienes instalados, puedes ejecutar los siguientes comandos en tu terminal:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+node -v
+npm -v
+ng version
+```
+### Clonar el Repositorio
+Para clonar este repositorio, utiliza el siguiente comando:
 
-## Build
+```bash
+git clone https://github.com/felimarod/gestor-de-tareas-y-proyectos.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Instalar Paquetes
+Navega a la carpeta del proyecto:
 
-## Running unit tests
+bash
+Copiar código
+cd nombre-del-repositorio
+Luego, instala los paquetes necesarios utilizando npm:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+bash
+Copiar código
+npm install
+Esto descargará todas las dependencias definidas en el archivo package.json.
 
-## Running end-to-end tests
+Iniciar el Servidor de Desarrollo
+Para iniciar el servidor de desarrollo, ejecuta el siguiente comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+bash
+Copiar código
+ng serve
+Navega a http://localhost:4200/ en tu navegador. La aplicación se recargará automáticamente si realizas cambios en los archivos de origen.
 
-## Further help
+Contribuciones
+Si deseas contribuir a este proyecto, por favor abre un "issue" o crea un "pull request".
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+Contacto
+Si tienes preguntas o sugerencias, no dudes en ponerte en contacto conmigo.
