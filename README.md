@@ -39,7 +39,7 @@ ng serve
 ```
 Navega a http://localhost:4200/ en tu navegador. La aplicación se recargará automáticamente si realizas cambios en los archivos de origen.
 
-##Contribuciones
+# Contribuciones
 Si deseas contribuir a este proyecto, por favor abre un "issue" o crea un "pull request".
 
 # Licencia
