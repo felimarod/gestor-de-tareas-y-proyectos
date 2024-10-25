@@ -1,0 +1,19 @@
+@for (task of tasks; track $index) {
+<mat-card appearance="outlined" class="card-task">
+  <!-- ID, título y estado -->
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>
+        {{ task.title.charAt(0).toUpperCase() + task.title.slice(1) }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        ({{ task.id }})
+      </mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{task.completed? 'C': 'No c'}}ompletada</p>
+  </mat-card-content>
+  <mat-card-footer>{{ task.userId }}</mat-card-footer>
+</mat-card>
+}

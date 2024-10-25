@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,24 +8,16 @@ import { throwError } from 'rxjs';
 export class HttpErrorManagerService {
   constructor() {}
 
-  public handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
+  public handleError(error: HttpErrorResponse): Observable<never> {
+    const errorMessage =
+      error.error instanceof ErrorEvent
+        ? `Client-side error: ${error.error.message}`
+        : `Backend error\nStatus code: ${
+            error.status || 'Unknown'
+          }, Body: ${JSON.stringify(error.error)}`;
 
-      console.error(
-        `Backend returned code ${error.status ? error.status : 'no code'}, ` +
-          `body was: ${JSON.stringify(error.error)}`
-      );
-    }
-    // return an observable with a user-facing error message
-    return throwError({
-      status: error.status ? error.status : 'Error',
-      message: 'Something bad happened; please try again later.',
-      error: error.error,
-    });
+    console.error(errorMessage);
+
+    return throwError(() => new Error(errorMessage)); // Asegúrate de que esta línea funcione
   }
 }
